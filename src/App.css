@@ -1,38 +1,32 @@
-.App {
-  text-align: center;
+.icon {
+    height: 20px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-input {
+    border: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-input:focus {
+    /* removing the input focus blue box. Put this on the form if you like. */
+    outline: none;
 }
+.search-bar {
+    /* This bit draws the box around it */
+    border: 1px solid grey;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    /* I've used padding so you can see the edges of the elements. */
+    padding: 2px;
+    width: 230px;
 }
+.option {
+    background-color: bisque;
+    width: 230px;
+    border: 1px solid rgb(181, 181, 181);
 
-.App-link {
-  color: #61dafb;
-}
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    overflow: auto;
+    flex-direction: row;
 }

@@ -4,10 +4,11 @@ export default function Option(props) {
     }
     return (
         <div onClick={setCountry} className="option">
-            {props.country.label}
             <img
+                className="flag"
                 src={`https://flagcdn.com/w20/${props.country.code.toLowerCase()}.png`}
             />
+            {props.country.label}
         </div>
     );
 }

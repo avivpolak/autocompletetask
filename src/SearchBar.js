@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-
+import ClearButton from "./ClearButton";
+import ToggleButton from "./ToggleButton";
 export default function SearchBar(props) {
     const inputEl = useRef(null);
     // const [inputVal, setInputVal] = useState("");
@@ -12,6 +13,7 @@ export default function SearchBar(props) {
     return (
         <div className="search-bar">
             <input
+                className="search-input"
                 type="text"
                 onChange={() => {
                     props.setCountry(inputEl.current.value);
@@ -19,6 +21,9 @@ export default function SearchBar(props) {
                 ref={inputEl}
                 value={props.country}
             />
+            <ClearButton clear={props.clear} />
+
+            <ToggleButton toggleDD={props.toggleDD} isDdOpen={props.isDdOpen} />
         </div>
     );
 }

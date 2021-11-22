@@ -1,6 +1,6 @@
+import "./App.css";
 import SearchBar from "./SearchBar";
 import OptionsDropdown from "./OptionsDropdown";
-import ClearButton from "./ClearButton";
 import ToggleButton from "./ToggleButton";
 import { useState, useEffect, useRef } from "react";
 import database from "./database";
@@ -24,9 +24,14 @@ function App() {
     }, [country]);
     return (
         <div className="App">
-            <SearchBar country={country} setCountry={setCountry} />
-            <ClearButton clear={clear} />
-            <ToggleButton toggleDD={toggleDD} />
+            <SearchBar
+                country={country}
+                setCountry={setCountry}
+                clear={clear}
+                toggleDD={toggleDD}
+                isDdOpen={isDdOpen}
+            />
+
             <OptionsDropdown
                 show={isDdOpen}
                 setCountry={setCountry}
