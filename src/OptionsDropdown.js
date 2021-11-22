@@ -1,9 +1,16 @@
-import database from "./database";
-export default function OptionsDropdown() {
+import Option from "./Option";
+export default function OptionsDropdown(props) {
     return (
         <div className="options-dropdown">
-            {database.map((country) => {
-                return <Option country={country} />;
+            {props.countries.map((country) => {
+                if (props.show) {
+                    return (
+                        <Option
+                            country={country}
+                            setCountry={props.setCountry}
+                        />
+                    );
+                }
             })}
         </div>
     );
