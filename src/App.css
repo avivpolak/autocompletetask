@@ -20,13 +20,11 @@
     background-color: bisque;
     width: 230px;
     border: 1px solid rgb(181, 181, 181);
-
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
     align-content: center;
-
     overflow: auto;
     flex-direction: row;
 }

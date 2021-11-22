@@ -1,15 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import ClearButton from "./ClearButton";
 import ToggleButton from "./ToggleButton";
 export default function SearchBar(props) {
     const inputEl = useRef(null);
-    // const [inputVal, setInputVal] = useState("");
 
-    // useEffect(() => {
-    //     inputEl.current.value = inputVal;
-    //     console.log(inputVal);
-    //     props.setCountry(inputVal);
-    // }, [inputVal]);
     return (
         <div className="search-bar">
             <input
@@ -17,13 +11,20 @@ export default function SearchBar(props) {
                 type="text"
                 onChange={() => {
                     props.setCountry(inputEl.current.value);
+                    props.setisDdOpen(true);
                 }}
                 ref={inputEl}
                 value={props.country}
+                onFocus={() => {
+                    props.setisDdOpen(true);
+                }}
             />
             <ClearButton clear={props.clear} />
 
-            <ToggleButton toggleDD={props.toggleDD} isDdOpen={props.isDdOpen} />
+            <ToggleButton
+                setisDdOpen={props.setisDdOpen}
+                isDdOpen={props.isDdOpen}
+            />
         </div>
     );
 }

@@ -1,4 +1,3 @@
-import database from "./database";
 import Option from "./Option";
 export default function OptionsDropdown(props) {
     return (
@@ -7,8 +6,10 @@ export default function OptionsDropdown(props) {
                 if (props.show) {
                     return (
                         <Option
+                            key={country.label}
                             country={country}
                             setCountry={props.setCountry}
+                            setisDdOpen={props.setisDdOpen}
                         />
                     );
                 }
